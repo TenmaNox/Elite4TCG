@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --font-sans: var(--app-font-sans);
+  --font-mono: var(--app-font-mono);
+  --radius-lg: 1rem;
+  --radius-md: .7rem;
+  --radius-sm: .4rem;
+}
+
+:root {
+  --background: 39 43% 94%;
+  --foreground: 205 36% 13%;
+  --border: 36 22% 81%;
+  --input: 36 22% 81%;
+  --ring: 72 72% 51%;
+  --card: 41 44% 97%;
+  --card-foreground: 205 36% 13%;
+  --primary: 205 36% 13%;
+  --primary-foreground: 39 43% 94%;
+  --secondary: 72 72% 51%;
+  --secondary-foreground: 205 36% 13%;
+  --muted: 38 22% 88%;
+  --muted-foreground: 205 13% 40%;
+  --accent: 12 67% 55%;
+  --accent-foreground: 41 44% 97%;
+  --destructive: 4 73% 46%;
+  --destructive-foreground: 41 44% 97%;
+  --sidebar: 205 36% 13%;
+  --sidebar-foreground: 39 43% 94%;
+  --sidebar-border: 205 25% 24%;
+  --sidebar-primary: 72 72% 51%;
+  --sidebar-primary-foreground: 205 36% 13%;
+  --sidebar-accent: 205 25% 24%;
+  --sidebar-accent-foreground: 39 43% 94%;
+  --app-font-sans: 'DM Sans', sans-serif;
+  --app-font-display: 'Space Grotesk', sans-serif;
+  --app-font-mono: 'DM Mono', monospace;
+  --radius: .7rem;
+}
+
+.dark {
+  --background: 205 36% 13%;
+  --foreground: 39 43% 94%;
+  --border: 205 25% 24%;
+  --input: 205 25% 24%;
+  --card: 205 30% 17%;
+  --card-foreground: 39 43% 94%;
+  --primary: 72 72% 51%;
+  --primary-foreground: 205 36% 13%;
+  --secondary: 205 25% 24%;
+  --secondary-foreground: 39 43% 94%;
+  --muted: 205 25% 24%;
+  --muted-foreground: 39 16% 72%;
+  --accent: 12 67% 55%;
+  --accent-foreground: 41 44% 97%;
+  --destructive: 4 73% 54%;
+  --destructive-foreground: 41 44% 97%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground antialiased; margin: 0; }
+  button, input, select { font: inherit; }
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-10px) rotate(-2deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.font-display { font-family: var(--app-font-display); }
+.font-mono { font-family: var(--app-font-mono); }
+.animate-rise { animation: rise .65s cubic-bezier(.2,.8,.2,1) both; }
+.animate-spin-slow { animation: spin 1s linear infinite; }
+.animate-float { animation: float 5s ease-in-out infinite; }
+.noise::after { content: ''; position: fixed; inset: 0; pointer-events: none; opacity: .035; z-index: 50; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); }
+.clip-ticket { clip-path: polygon(0 0, 100% 0, 100% 92%, 96% 100%, 91% 92%, 86% 100%, 81% 92%, 76% 100%, 71% 92%, 66% 100%, 61% 92%, 56% 100%, 51% 92%, 46% 100%, 41% 92%, 36% 100%, 31% 92%, 26% 100%, 21% 92%, 16% 100%, 11% 92%, 6% 100%, 0 92%); }
+.scrollbar-hidden::-webkit-scrollbar { display: none; }
+.scrollbar-hidden { scrollbar-width: none; }

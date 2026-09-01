@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Página web"
+description = "Una página web de presentación en español, responsive y visualmente cuidada, pensada como base editable para una marca, servicio o proyecto."
+version = "1.0.0"
+id = "artifacts/pagina-web"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25909
+
+[services.development]
+run = "pnpm --filter @workspace/pagina-web run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/pagina-web", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/pagina-web/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25909"
+BASE_PATH = "/"

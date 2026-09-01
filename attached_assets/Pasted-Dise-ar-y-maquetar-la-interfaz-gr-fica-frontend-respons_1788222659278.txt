@@ -1,0 +1,88 @@
+Diseñar y maquetar la interfaz gráfica (frontend) responsiva para una tienda virtual completa y funcional, aplicando buenas prácticas de usabilidad (UX/UI), persistencia de datos local, arquitectura de información y lógica cliente para todo el ciclo de compra.
+
+
+1. Especificaciones de Diseño y Estructura Base
+
+Elijan una unidad de negocio (moda, tecnología, librería, calzado, etc.) y maqueten las siguentes tres pantallas principales con diseño adaptativo (Mobile First):
+
+Página de Inicio (Homepage):
+
+Header con navegación clara, barra de búsqueda, ícono de wishlist e ícono de carrito con contador.
+
+Banner principal (Hero) con llamada a la acción (CTA) clara.
+
+Sección de productos destacados o categorías principales.
+
+Footer con enlaces informativos (políticas de envío, contacto, redes sociales).
+
+Página de Detalle de Producto (Product Detail Page PDP):
+
+Galería de imágenes o vista principal del producto.
+
+Título, precio, selector de cantidad/variantes (tallas, colores).
+
+Botón de "Agregar al Carrito" con alta visibilidad visual.
+
+Sección de descripción detallada y especificaciones técnicas.
+
+Página de Carrito y Checkout (Cart & Checkout Page):
+
+Resumen claro de los productos seleccionados (imagen, cantidad, subtotal).
+
+Desglose de impuestos, costos de envío estimativos y Total.
+
+Formulario para datos de envío y selección de método de pago.
+
+2. Funcionalidades Avanzadas e Interactivas (UX Helpers)
+
+Gestión Dinámica y Persistencia del Carrito:
+
+Uso de LocalStorage: Los productos agregados deben mantenerse guardados aunque se recargue o cierre el navegador.
+
+Carrito Lateral Desplegable (Slideover Cart / Drawer): Panel lateral interactivo al hacer clic en el carrito del header sin redirigir al usuario.
+
+Control de Stock y Cantidades: Modificación en tiempo real de las cantidades (+/) con cálculo automático de subtotal y límite dinámico de inventario.
+
+Búsqueda y Filtrado en Tiempo Real:
+
+Filtros Combinados: Filtrado funcional por categoría, rango de precio y ordenamiento (menor a mayor precio, popularidad).
+
+Barra de Búsqueda Predictiva: Campo de entrada que filtre la lista de productos visibles instantáneamente mientras el usuario escribe.
+
+Componentes Interactivos:
+
+Vista Previa Rápida (Quick View): Modal centrado con detalles rápidos del producto sin abandonar el catálogo general.
+
+Lista de Deseos (Wishlist): Toggle del ícono de corazón para guardar o remover ítems en un arreglo de "Favoritos" en almacenamiento local.
+
+Calculadora de Envíos: Input en la vista de compra que aplique un costo dinámico según un código postal simulado.
+
+Validación de Formularios:
+
+Manejo de errores visuales (bordes rojos, mensajes de advertencia) para campos vacíos, formato de correo e información bancaria.
+
+3. Módulos de Usuarios, Autenticación, Ofertas y Procesamiento de Compras
+
+Gestión de Usuarios y Autenticación (Simulada):
+
+Módulo de Registro (Signup): Formulario con validación de campos obligatorios (nombre, correo válido, contraseña con indicador de fortaleza y confirmación).
+
+Módulo de Inicio de Sesión (Login): Validación de credenciales contra datos guardados en `LocalStorage`.
+
+Persistencia de Sesión: El Header debe cambiar dinámicamente mostrando el nombre del usuario y un menú desplegable (Perfil / Cerrar Sesión).
+
+Rutas Protegidas (Simuladas): Si el usuario intenta ir al Checkout sin haber iniciado sesión, debe redirigirse al Login con un mensaje.
+
+Sistema de Ofertas y Promociones:
+
+Visualización de Ofertas: Etiquetas (badges) visuales en las tarjetas de producto (ej. "20% OFF") y muestra del precio original tachado junto al rebajado.
+
+Cupones de Descuento: Campo en el resumen de compra para ingresar un código promocional (ej. `PROFE100`) con descuento porcentual o fijo reflejado al instante.
+
+Flujo Completo de Compras:
+
+Paso a Paso en Checkout (Multistep): Sección de Dirección de Envío y Método de Pago (Tarjeta, Transferencia, PayPal).
+
+Simulación de Procesamiento: Botón de "Confirmar Pago" que muestre un estado de carga (spinner) de 2 segundos.
+
+Pantalla / Modal de Confirmación (Thank You Page): Generación de un número de orden aleatorio (ej. `ORD84920`), resumen de la transacción, vaciado automático del carrito y botón de regreso a la tienda.
