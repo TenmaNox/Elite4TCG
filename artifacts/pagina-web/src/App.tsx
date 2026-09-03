@@ -4,8 +4,16 @@ import {
   LockKeyhole, Menu, Minus, PackageCheck, Plus, RotateCcw, Search, ShieldCheck,
   ShoppingBag, Star, Trash2, Truck, UserRound, WalletCards, X,
 } from 'lucide-react';
+import guardiansRisingImage from '@assets/2017-Pokemon-Sun-Moon-Guardians-Rising-Booster-Box_1788409720415.avif';
+import arcanaDeckBoxImage from '@assets/Arcana_deck_box_100_1788409720416.jpg';
+import terraBinderImage from '@assets/carpeta_9_pocket_terra_1788409720416.jpg';
+import ursulasTroveImage from '@assets/disney-lorcana-ursulas-return-illumineers-trove_1788409720416.png';
+import obsidianSleevesImage from '@assets/fundas_mate_obsidian_100_1788409720416.jpg';
+import paldeanFatesImage from '@assets/padean_fates_etb_1788409720417.webp';
+import scarletVioletBundleImage from '@assets/pokemon-scarlet-violet-booster-bundle-ingles_1788409720417.jpg';
+import linkStrikeImage from '@assets/starter_deck_link_strike_1788409720417.webp';
 
-type Category = 'Pokémon' | 'Riftbound' | 'One Piece' | 'Lorcana' | 'Accesorios';
+type Category = 'Pokémon' | 'Riftbound' | 'One Piece' | 'Lorcana' | 'Yu-Gi-Oh!' | 'Accesorios';
 type PaymentMethod = 'card' | 'transfer' | 'paypal';
 type Product = {
   id: number; name: string; category: Category; price: number; oldPrice?: number;
@@ -18,27 +26,20 @@ type CheckoutForm = {
   method: PaymentMethod; card: string; expiry: string; cvv: string;
 };
 
-const imageSets = [
-  'https://images.pexels.com/photos/278918/pexels-photo-278918.jpeg?auto=compress&cs=tinysrgb&w=900',
-  'https://images.pexels.com/photos/776654/pexels-photo-776654.jpeg?auto=compress&cs=tinysrgb&w=900',
-  'https://images.pexels.com/photos/776654/pexels-photo-776654.jpeg?auto=compress&cs=tinysrgb&w=900',
-  'https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg?auto=compress&cs=tinysrgb&w=900',
-];
-
 const products: Product[] = [
-  { id: 1, name: 'Caja de Élite: Destinos de Paldea', category: 'Pokémon', price: 899, oldPrice: 1049, stock: 7, rating: 4.9, badge: 'Oferta', description: 'Una ETB para abrir, guardar y volver a mirar. Incluye fundas, dados y 9 sobres de expansión.', images: imageSets },
-  { id: 2, name: 'Booster Box: Guardianes del Velo', category: 'Riftbound', price: 2499, stock: 12, rating: 4.8, badge: 'Nuevo', description: 'La caja sellada que tu mazo estaba esperando. 24 sobres con cartas de la nueva expansión.', images: [imageSets[1], imageSets[3], imageSets[0]] },
-  { id: 3, name: 'Manga Collection 06 — Ace', category: 'One Piece', price: 1599, oldPrice: 1799, stock: 4, rating: 5, badge: 'Últimas', description: 'Colección especial en inglés con cartas foil y una carta promocional exclusiva.', images: [imageSets[2], imageSets[0], imageSets[1]] },
-  { id: 4, name: 'Illumineer’s Trove: Ursula', category: 'Lorcana', price: 1249, stock: 18, rating: 4.7, description: 'Caja de almacenamiento con separadores, contadores y 6 sobres de The First Chapter.', images: [imageSets[3], imageSets[2], imageSets[0]] },
-  { id: 5, name: 'Playmat Moss / Graphite', category: 'Accesorios', price: 599, oldPrice: 699, stock: 21, rating: 4.9, badge: 'Oferta', description: 'Neopreno de 2 mm, superficie suave y base antideslizante. Hecho para partidas largas.', images: [imageSets[0], imageSets[2]] },
-  { id: 6, name: 'Fundas Matte Obsidian — 100', category: 'Accesorios', price: 249, stock: 46, rating: 4.6, description: '100 fundas mate de corte preciso. Barajan rápido y reducen el brillo de mesa.', images: [imageSets[1], imageSets[0]] },
-  { id: 7, name: 'Deck Box Arcana 100+', category: 'Accesorios', price: 449, stock: 30, rating: 4.8, description: 'Caja rígida con cierre magnético, bandeja para dados y espacio para doble funda.', images: [imageSets[2], imageSets[1]] },
-  { id: 8, name: 'Bundle Sellado: Escarlata y Púrpura', category: 'Pokémon', price: 699, stock: 9, rating: 4.7, badge: 'Sellado', description: 'Tres sobres y una promo brillante para empezar una nueva página en tu carpeta.', images: [imageSets[3], imageSets[0]] },
-  { id: 9, name: 'Starter Deck: First Strike', category: 'Riftbound', price: 399, stock: 14, rating: 4.8, description: 'Mazo listo para jugar y aprender el ritmo de Riftbound sin construir desde cero.', images: [imageSets[1], imageSets[2]] },
-  { id: 10, name: 'Carpeta 9-Pocket Terra', category: 'Accesorios', price: 499, stock: 16, rating: 4.9, description: 'Carpeta de 20 páginas con cierre elástico. Tus cartas, ordenadas y a salvo.', images: [imageSets[0], imageSets[3]] },
+  { id: 1, name: 'Caja de Élite: Destinos de Paldea', category: 'Pokémon', price: 899, oldPrice: 1049, stock: 7, rating: 4.9, badge: 'Oferta', description: 'Una ETB para abrir, guardar y volver a mirar. Incluye fundas, dados y 9 sobres de expansión.', images: [paldeanFatesImage] },
+  { id: 2, name: 'Booster Box: Guardians Rising', category: 'Pokémon', price: 2499, stock: 12, rating: 4.8, badge: 'Nuevo', description: 'Caja sellada de Pokémon Sun & Moon—Guardians Rising con 36 sobres para ampliar tu colección.', images: [guardiansRisingImage] },
+  { id: 3, name: 'Manga Collection 06 — Ace', category: 'One Piece', price: 1599, oldPrice: 1799, stock: 4, rating: 5, badge: 'Últimas', description: 'Colección especial en inglés con cartas foil y una carta promocional exclusiva.', images: ['https://images.pexels.com/photos/776654/pexels-photo-776654.jpeg?auto=compress&cs=tinysrgb&w=900'] },
+  { id: 4, name: 'Illumineer’s Trove: Ursula', category: 'Lorcana', price: 1249, stock: 18, rating: 4.7, description: 'Illumineer’s Trove de Ursula’s Return para guardar tu colección con separadores y accesorios.', images: [ursulasTroveImage] },
+  { id: 5, name: 'Playmat Moss / Graphite', category: 'Accesorios', price: 599, oldPrice: 699, stock: 21, rating: 4.9, badge: 'Oferta', description: 'Neopreno de 2 mm, superficie suave y base antideslizante. Hecho para partidas largas.', images: ['https://images.pexels.com/photos/278918/pexels-photo-278918.jpeg?auto=compress&cs=tinysrgb&w=900'] },
+  { id: 6, name: 'Fundas Matte Obsidian — 100', category: 'Accesorios', price: 249, stock: 46, rating: 4.6, description: '100 fundas mate de corte preciso. Barajan rápido y reducen el brillo de mesa.', images: [obsidianSleevesImage] },
+  { id: 7, name: 'Deck Box Arcana 100+', category: 'Accesorios', price: 449, stock: 30, rating: 4.8, description: 'Caja rígida con cierre magnético, bandeja para dados y espacio para doble funda.', images: [arcanaDeckBoxImage] },
+  { id: 8, name: 'Bundle Sellado: Escarlata y Púrpura', category: 'Pokémon', price: 699, stock: 9, rating: 4.7, badge: 'Sellado', description: 'Bundle sellado con 6 sobres de Pokémon Scarlet & Violet para empezar una nueva página en tu carpeta.', images: [scarletVioletBundleImage] },
+  { id: 9, name: 'Starter Deck: Link Strike', category: 'Yu-Gi-Oh!', price: 399, stock: 14, rating: 4.8, description: 'Mazo de inicio de Yu-Gi-Oh! listo para invocar monstruos Link y comenzar a jugar.', images: [linkStrikeImage] },
+  { id: 10, name: 'Carpeta 9-Pocket Terra', category: 'Accesorios', price: 499, stock: 16, rating: 4.9, description: 'Carpeta de 20 páginas con cierre elástico. Tus cartas, ordenadas y a salvo.', images: [terraBinderImage] },
 ];
 
-const categories: Array<'Todos' | Category> = ['Todos', 'Pokémon', 'Riftbound', 'One Piece', 'Lorcana', 'Accesorios'];
+const categories: Array<'Todos' | Category> = ['Todos', 'Pokémon', 'Riftbound', 'One Piece', 'Lorcana', 'Yu-Gi-Oh!', 'Accesorios'];
 const money = (value: number) => new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(value);
 const readStore = <T,>(key: string, fallback: T): T => {
   try { const value = localStorage.getItem(key); return value ? JSON.parse(value) as T : fallback; } catch { return fallback; }
@@ -228,7 +229,7 @@ function App() {
       <section id="inicio" className="relative overflow-hidden bg-[#193941] text-[#f5f0e6]">
         <div className="mx-auto grid min-h-[650px] max-w-[1400px] items-center gap-12 px-5 py-16 lg:grid-cols-[1.02fr_.98fr] lg:px-10 lg:py-20">
           <div className="relative z-10 animate-rise"><p className="mb-6 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.2em] text-[#d9eb4b]"><span className="h-px w-10 bg-[#d9eb4b]" /> Cartas con historia</p><h1 className="max-w-2xl font-display text-[clamp(3.7rem,8vw,7.7rem)] font-bold leading-[.84] tracking-[-.08em]">Colecciona<br /><span className="text-[#d9eb4b]">lo que te</span><br />representa.</h1><p className="mt-8 max-w-md text-base leading-7 text-[#bac9c3]">Singles, producto sellado y accesorios elegidos para quienes saben que una carta nunca es solo una carta.</p><div className="mt-9 flex flex-wrap gap-3"><a href="#catalogo" className="flex items-center gap-3 bg-[#d9eb4b] px-6 py-4 font-display font-bold text-[#12282f] transition-transform hover:-translate-y-1" data-testid="link-hero-catalog"><span>Explorar colección</span><ArrowRight size={18} /></a><a href="#seleccion" className="flex items-center border border-[#829a97] px-6 py-4 font-display font-bold text-[#f5f0e6] hover:border-[#d9eb4b] hover:text-[#d9eb4b]" data-testid="link-hero-selection">Ver favoritos</a></div><div className="mt-14 flex gap-8 border-t border-[#496169] pt-5"><div><p className="font-display text-2xl font-bold">+2.400</p><p className="mt-1 font-mono text-[9px] uppercase tracking-[.12em] text-[#9badA7]">cartas catalogadas</p></div><div><p className="font-display text-2xl font-bold">24/48h</p><p className="mt-1 font-mono text-[9px] uppercase tracking-[.12em] text-[#9badA7]">envío nacional</p></div></div></div>
-           <div className="relative mx-auto h-[430px] w-full max-w-[520px] lg:h-[540px]"><div className="absolute right-4 top-4 h-[78%] w-[62%] rotate-[9deg] overflow-hidden border-[10px] border-[#e0d7c5] bg-[#de674a] shadow-[18px_18px_0_#d9eb4b] animate-float"><img src={imageSets[2]} alt="Selección de cartas sobre una mesa" className="h-full w-full object-cover mix-blend-multiply opacity-80" /><div className="absolute inset-4 border border-[#f5f0e6]/60" /><div className="absolute bottom-5 left-5 font-display text-3xl font-bold leading-none text-[#f5f0e6]">ÉLITE<br />4 TCG</div></div><div className="absolute bottom-2 left-2 h-[63%] w-[59%] -rotate-[10deg] overflow-hidden border-[10px] border-[#d9eb4b] bg-[#c6d04e] shadow-[12px_12px_0_#10292f]"><img src={imageSets[0]} alt="Accesorios de juego y cartas" className="h-full w-full object-cover mix-blend-multiply opacity-75" /><div className="absolute left-5 top-5 font-mono text-xs font-bold tracking-[.18em] text-[#12282f]">E4 / 04</div></div><div className="absolute bottom-9 right-2 grid h-28 w-28 place-items-center rounded-full border border-[#d9eb4b] text-center font-mono text-[10px] uppercase tracking-[.13em] text-[#d9eb4b]">Sellado<br />con criterio</div></div>
+           <div className="relative mx-auto h-[430px] w-full max-w-[520px] lg:h-[540px]"><div className="absolute right-4 top-4 h-[78%] w-[62%] rotate-[9deg] overflow-hidden border-[10px] border-[#e0d7c5] bg-[#de674a] shadow-[18px_18px_0_#d9eb4b] animate-float"><img src={ursulasTroveImage} alt="Selección de producto sellado de Lorcana" className="h-full w-full object-cover mix-blend-multiply opacity-80" /><div className="absolute inset-4 border border-[#f5f0e6]/60" /><div className="absolute bottom-5 left-5 font-display text-3xl font-bold leading-none text-[#f5f0e6]">ÉLITE<br />4 TCG</div></div><div className="absolute bottom-2 left-2 h-[63%] w-[59%] -rotate-[10deg] overflow-hidden border-[10px] border-[#d9eb4b] bg-[#c6d04e] shadow-[12px_12px_0_#10292f]"><img src={paldeanFatesImage} alt="Caja de Élite Pokémon Destinos de Paldea" className="h-full w-full object-cover mix-blend-multiply opacity-75" /><div className="absolute left-5 top-5 font-mono text-xs font-bold tracking-[.18em] text-[#12282f]">E4 / 04</div></div><div className="absolute bottom-9 right-2 grid h-28 w-28 place-items-center rounded-full border border-[#d9eb4b] text-center font-mono text-[10px] uppercase tracking-[.13em] text-[#d9eb4b]">Sellado<br />con criterio</div></div>
         </div><div className="absolute -bottom-24 -right-20 h-72 w-72 rounded-full border-[50px] border-[#de674a]/30" />
       </section>
       <div className="overflow-hidden border-b border-[#cfc7ba] bg-[#d9eb4b] py-3"><div className="flex min-w-max animate-[marquee_25s_linear_infinite] gap-10 font-mono text-[10px] font-bold uppercase tracking-[.2em] text-[#12282f]"><span>Pokémon</span><span>·</span><span>Riftbound</span><span>·</span><span>One Piece</span><span>·</span><span>Lorcana</span><span>·</span><span>Accesorios para jugar mejor</span><span>·</span><span>Pokémon</span><span>·</span><span>Riftbound</span><span>·</span><span>One Piece</span><span>·</span><span>Lorcana</span></div></div>
