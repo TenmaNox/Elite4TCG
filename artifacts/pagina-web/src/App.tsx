@@ -12,6 +12,8 @@ import obsidianSleevesImage from '@assets/fundas_mate_obsidian_100_1788409720416
 import paldeanFatesImage from '@assets/padean_fates_etb_1788409720417.webp';
 import scarletVioletBundleImage from '@assets/pokemon-scarlet-violet-booster-bundle-ingles_1788409720417.jpg';
 import linkStrikeImage from '@assets/starter_deck_link_strike_1788409720417.webp';
+import prismaticSuperPremiumImage from '@assets/prismatic_evolutions_super_premium_collection_1788410087360.png';
+import mewPlaymatImage from '@assets/Ultra-Pro-Pokemon-Mew-Mythical-Foil-Playmat-Spielmatte-Unterla_1788410087361.jpg';
 
 type Category = 'Pokémon' | 'Riftbound' | 'One Piece' | 'Lorcana' | 'Yu-Gi-Oh!' | 'Accesorios';
 type PaymentMethod = 'card' | 'transfer' | 'paypal';
@@ -29,9 +31,9 @@ type CheckoutForm = {
 const products: Product[] = [
   { id: 1, name: 'Caja de Élite: Destinos de Paldea', category: 'Pokémon', price: 899, oldPrice: 1049, stock: 7, rating: 4.9, badge: 'Oferta', description: 'Una ETB para abrir, guardar y volver a mirar. Incluye fundas, dados y 9 sobres de expansión.', images: [paldeanFatesImage] },
   { id: 2, name: 'Booster Box: Guardians Rising', category: 'Pokémon', price: 2499, stock: 12, rating: 4.8, badge: 'Nuevo', description: 'Caja sellada de Pokémon Sun & Moon—Guardians Rising con 36 sobres para ampliar tu colección.', images: [guardiansRisingImage] },
-  { id: 3, name: 'Manga Collection 06 — Ace', category: 'One Piece', price: 1599, oldPrice: 1799, stock: 4, rating: 5, badge: 'Últimas', description: 'Colección especial en inglés con cartas foil y una carta promocional exclusiva.', images: ['https://images.pexels.com/photos/776654/pexels-photo-776654.jpeg?auto=compress&cs=tinysrgb&w=900'] },
+  { id: 3, name: 'Prismatic Evolutions: Super-Premium Collection', category: 'Pokémon', price: 1599, oldPrice: 1799, stock: 4, rating: 5, badge: 'Últimas', description: 'Colección Super-Premium de Pokémon TCG: Scarlet & Violet—Prismatic Evolutions, ideal para abrir o exhibir.', images: [prismaticSuperPremiumImage] },
   { id: 4, name: 'Illumineer’s Trove: Ursula', category: 'Lorcana', price: 1249, stock: 18, rating: 4.7, description: 'Illumineer’s Trove de Ursula’s Return para guardar tu colección con separadores y accesorios.', images: [ursulasTroveImage] },
-  { id: 5, name: 'Playmat Moss / Graphite', category: 'Accesorios', price: 599, oldPrice: 699, stock: 21, rating: 4.9, badge: 'Oferta', description: 'Neopreno de 2 mm, superficie suave y base antideslizante. Hecho para partidas largas.', images: ['https://images.pexels.com/photos/278918/pexels-photo-278918.jpeg?auto=compress&cs=tinysrgb&w=900'] },
+  { id: 5, name: 'Ultra PRO Pokémon Mew — Mythical Foil Playmat', category: 'Accesorios', price: 599, oldPrice: 699, stock: 21, rating: 4.9, badge: 'Oferta', description: 'Playmat Ultra PRO de Pokémon con diseño Mew Mythical Foil, superficie acolchada y base antideslizante.', images: [mewPlaymatImage] },
   { id: 6, name: 'Fundas Matte Obsidian — 100', category: 'Accesorios', price: 249, stock: 46, rating: 4.6, description: '100 fundas mate de corte preciso. Barajan rápido y reducen el brillo de mesa.', images: [obsidianSleevesImage] },
   { id: 7, name: 'Deck Box Arcana 100+', category: 'Accesorios', price: 449, stock: 30, rating: 4.8, description: 'Caja rígida con cierre magnético, bandeja para dados y espacio para doble funda.', images: [arcanaDeckBoxImage] },
   { id: 8, name: 'Bundle Sellado: Escarlata y Púrpura', category: 'Pokémon', price: 699, stock: 9, rating: 4.7, badge: 'Sellado', description: 'Bundle sellado con 6 sobres de Pokémon Scarlet & Violet para empezar una nueva página en tu carpeta.', images: [scarletVioletBundleImage] },
